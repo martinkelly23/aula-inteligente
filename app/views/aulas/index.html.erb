@@ -1,0 +1,24 @@
+<h1>Listado de Aulas</h1>
+  <table class= "table2 table table-hover">
+    <thead>
+      <tr>
+        <th> Nombre </th>
+        <th> Departamento </th>
+        <th> Consumo </th>
+        <th> Acciones </th>
+      </tr>
+    </thead>
+<tbody>
+  <% Aula.all.each do |aula| %>
+    <tr>
+      <td> <%= aula.NombreAula %> </td>
+      <td> <%= aula.Departemento %> </td>
+      <td> <%= aula.ConsumoAula %> </td>
+          <td><%= link_to "Editar", editarAula_path(@aula, :id => aula.id), class: 'btn btn-info btn-sm' %>
+          <%= link_to "Eliminar", eliminarAula_path(@aula, :id => aula.id), class: 'btn btn-danger btn-sm',:data => { :confirm => 'Esta seguro que desea eliminar?'} %></td>
+          <td>
+
+    </tr>
+<% end %>
+</tbody>
+</table>

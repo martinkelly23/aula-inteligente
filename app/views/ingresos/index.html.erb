@@ -1,0 +1,38 @@
+
+<% if user_signed_in? %>
+<% if current_user.name == "Administrador"%>
+<h1>Listado de Ingresos a las Aulas</h1>
+  <table class= "table table-hover">
+    <thead>
+      <tr>
+        <th> Aula </th>
+        <th> Usuario </th>
+        <th> Hora de entrada </th>
+        <th> Hora de salida </th>
+        <th> Consumo </th>
+        <th> Acciones </th>
+      </tr>
+    </thead>
+<tbody>
+  <% Ingreso.all.each do |ingre| %>
+    <tr>
+      <td> <%= Aula.find(ingre.aula_id).NombreAula %> </td>
+      <td> <%= User.find(ingre.user_id).name %> </td>
+      <td> <%= ingre.HoraEntrada %> </td>
+      <td> <%= ingre.HoraSalida %> </td>
+      <td> <%= ingre.ConsumoParcial %> </td>
+      <td>
+        <p>
+          <td><%= link_to "Editar", editarLogro_path(@ingre, :id => ingre.id), class: 'btn btn-info btn-sm' %></d>
+            <td><%= link_to "Eliminar", eliminarIngreso_path(@ingre, :id => ingre.id), class: 'btn btn-danger btn-sm"' %></d>
+
+        </p>
+      </td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+<% end %>
+<% else %>
+<h1>Algo para usuarios no registrados que ingresen al sistema...</h1>
+<% end %>

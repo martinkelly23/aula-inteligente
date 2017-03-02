@@ -1,0 +1,28 @@
+<h1>Listado de últimos usuarios que ingresaron</h1>
+<div class="container-fluid">
+
+  <table class="table table-hover">
+
+    <tr class="active">
+
+      <th> Nombre </th>
+      <th> Aula </th>
+      <th> Imagen </th>
+
+
+    </tr>
+
+      <% Gauchada.all.each do |gau| %>
+
+    <tr>
+        <td> <%= gau.titulo %> </td>
+        <td> <%= gau.ubicacion %> </td>
+        <td><%= image_tag gau.imagen , size: "150x150"%></td>
+        <td><%= link_to "Ver mas", detallesGauchada_path(@gauchada, :id => gau.id), class: 'btn btn-info btn-sm' %></d>
+    </tr>
+    <% end %>
+
+  </table>
+
+
+</div>

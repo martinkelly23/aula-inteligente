@@ -1,0 +1,22 @@
+<h1>Detalles de gauchada</h1>
+<div class="container-fluid">
+
+  <table class="table table-hover">
+
+    <tr class="active">
+      <th> Nombre </th>
+      <th> Ubicacion </th>
+      <th> Foto </th>
+      <th> Descripcion </th>
+    </tr>
+    <tr>
+        <td> <%= @gauchada.titulo %> </td>
+        <td> <%= @gauchada.ubicacion %> </td>
+        <td><%= image_tag @gauchada.imagen , size: "150x150"%></td>
+        <td> <%= @gauchada.descripcion %> </td>
+          <% if user_signed_in?%>
+              <td><%= link_to "Postularse", nuevoMonstruo_path, class: 'btn btn-info btn-sm' %></d>
+          <% end %>
+    </tr>
+  </table>
+</div>

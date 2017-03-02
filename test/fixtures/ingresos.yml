@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  HoraEntrada: 1
+  HoraSalida: 1
+  ConsumoParcial: 1
+
+two:
+  HoraEntrada: 1
+  HoraSalida: 1
+  ConsumoParcial: 1

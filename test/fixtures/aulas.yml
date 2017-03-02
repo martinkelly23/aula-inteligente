@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NombreAula: MyString
+  Departemento: MyString
+  ConsumoAula: 1
+
+two:
+  NombreAula: MyString
+  Departemento: MyString
+  ConsumoAula: 1
