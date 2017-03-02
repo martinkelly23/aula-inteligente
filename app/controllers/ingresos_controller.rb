@@ -28,6 +28,9 @@ class IngresosController < ApplicationController
      @ingresoAux = Ingreso.where(aula_id: @ingreso.aula_id).first
      @ingresoAux.HoraSalida = Time.now.strftime("%R")
      @ingresoAux.ConsumoParcial = @ingreso.ConsumoParcial
+     @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
+     @aula.ConsumoAula += @ingresoAux.ConsumoParcial #Sumo al aula el consumo del usuario
+     @aula.save #Guardo la modificacion hecha en el aula
      if(cumple)
        if @ingresoAux.save
          flash[:notice] = 'El ingreso se completo exitosamente!'
