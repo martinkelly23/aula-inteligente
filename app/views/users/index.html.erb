@@ -1,0 +1,25 @@
+<% if user_signed_in? %>
+<% if current_user.name == "Administrador"%>
+<h1>Listado de usuarios</h1>
+  <table class= "table table-hover">
+    <thead>
+      <tr>
+        <th> Nombre de usuario </th>
+        <th> Código </th>
+        <th> Consumo </th>
+      </tr>
+    </thead>
+<tbody>
+  <% @users.all.each do |usuario| %>
+    <tr>
+      <td> <%= usuario.name %> </td>
+      <td>
+      </td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+<% end %>
+<% else %>
+<h1>Algo para usuarios no registrados que ingresen al sistema...</h1>
+<% end %>

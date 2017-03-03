@@ -24,7 +24,7 @@
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <% if current_user.name == "Administrador"%>
-                  <li><%= link_to 'Listado de usuarios', listadoLogros_path %></li>
+                  <li><%= link_to 'Listado de usuarios', users_path %></li>
                   <li><%= link_to 'Listado de aulas', listadoAulas_path %></li>
                   <li><%= link_to 'Listado de ingresos', listadoIngresos_path  %></li>
                   <li><%= link_to 'Nueva Aula', nuevaAula_path %></li>

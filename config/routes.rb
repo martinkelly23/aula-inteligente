@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get '/cargarAula', to:'aulas#cargarAula'
 
   devise_for :users
+  resources :users, only: [:index]
   root 'ingresos#index'
   get '/nuevoMonstruo', to:'monstruos#new'
   get '/listadoMonstruos', to:'monstruos#index'
