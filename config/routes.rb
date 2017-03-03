@@ -33,8 +33,10 @@ Rails.application.routes.draw do
 
   get '/cargarAula', to:'aulas#cargarAula'
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users, only: [:index]
+  get '/nuevoUsuario', to:'users#new'
+
   root 'ingresos#index'
   get '/nuevoMonstruo', to:'monstruos#new'
   get '/listadoMonstruos', to:'monstruos#index'
