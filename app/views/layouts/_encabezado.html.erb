@@ -27,6 +27,7 @@
                   <li><%= link_to 'Listado de usuarios', users_path %></li>
                   <li><%= link_to 'Listado de aulas', listadoAulas_path %></li>
                   <li><%= link_to 'Listado de ingresos', listadoIngresos_path  %></li>
+                  <li><%= link_to 'Estadisticas de aulas', estadisticasAulas_path  %></li>
                   <li><%= link_to 'Nueva Aula', nuevaAula_path %></li>
                   <li><%= link_to 'Nuevo Usuario', new_user_registration_path %></li>
                 <% end %>
@@ -36,7 +37,6 @@
             </li>
 
         <% else %>
-          <li><%= link_to 'Registrarse', new_user_registration_path%></li>
           <li><%= link_to 'Ingresar', new_user_session_path%></li>
         <% end %>
       </ul>
