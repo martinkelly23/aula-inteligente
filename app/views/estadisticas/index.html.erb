@@ -1,4 +1,7 @@
 
+<%= javascript_include_tag "path/to/highcharts.js", "chartkick" %>
 <h1>Estadísticas de consumo de las aulas</h1>
-<%= column_chart Aula.pluck(:NombreAula, :ConsumoAula)%>
+<%= column_chart Aula.pluck(:NombreAula, :ConsumoAula), xtitle: "Aula", ytitle: "Consumo"%>
+
+<h3>Grafico de torta</h3>
 <%= pie_chart Aula.pluck(:NombreAula, :ConsumoAula)%>
