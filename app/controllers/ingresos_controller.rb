@@ -31,6 +31,9 @@ class IngresosController < ApplicationController
      @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
      @aula.ConsumoAula += @ingresoAux.ConsumoParcial #Sumo al aula el consumo del usuario
      @aula.save #Guardo la modificacion hecha en el aula
+     @usuario = User.find(@ingreso.user_id) #Busco el usuario que uso el aula
+     @usuario.consumo += @ingresoAux.ConsumoParcial
+     @usuario.save 
      if(cumple)
        if @ingresoAux.save
          flash[:notice] = 'El ingreso se completo exitosamente!'
