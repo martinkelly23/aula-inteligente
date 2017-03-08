@@ -13,4 +13,4 @@ Monstruo.find_or_create_by(nombre: "Hombre Lobo", edad: 55)
 
 
 puts "Creo el usuario Administrador"
-user = User.create! :name => 'Administrador', :email => 'admin@gmail.com', :localidad => 'La Plata', :codigo => 'ad12', :password => '123456', :password_confirmation => '123456'
+user = User.create! :name => 'Administrador', :email => 'admin@gmail.com', :localidad => 'La Plata', :codigo => 'ad12', :consumo => 0, :password => '123456', :password_confirmation => '123456'
