@@ -26,20 +26,32 @@
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <% if current_user.name == "Administrador"%>
-                  <li><%= link_to 'Listado de usuarios', users_path %></li>
-                  <li><%= link_to 'Listado de aulas', listadoAulas_path %></li>
-                  <li><%= link_to 'Listado de ingresos', listadoIngresos_path  %></li>
-                  <li><%= link_to 'Estadisticas de aulas', estadisticasAulas_path  %></li>
-                  <li><%= link_to 'Nueva Aula', nuevaAula_path %></li>
-                  <li><%= link_to 'Nuevo Usuario', new_user_registration_path %></li>
+                  <li><%= link_to users_path do%><i class="glyphicon glyphicon-list-alt"></i> Listado de usuarios
+                  <% end %> </li>
+                  <li><%= link_to listadoAulas_path do%><i class="glyphicon glyphicon-blackboard"></i> Listado de aulas
+                  <% end %> </li>
+                  <li><%= link_to listadoIngresos_path  do%><i class="glyphicon glyphicon-sort"></i> Listado de ingresos
+                  <% end %> </li>
+                  <li><%= link_to estadisticasAulas_path  do%><i class="glyphicon glyphicon-stats"></i> Estadísticas de aulas
+                  <% end %> </li>
+                  <li><%= link_to nuevaAula_path do%><i class="glyphicon glyphicon-pencil"></i> Nueva Aula
+                  <% end %> </li>
+                  <li><%= link_to new_user_registration_path do%><i class="glyphicon glyphicon-pencil"></i> Nuevo Usuario
+                  <% end %> </li>
                 <% end %>
-                <li><%= link_to 'Editar perfil', edit_user_registration_path %> </li>
-                <li><%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete  %></li>
+                <li><%= link_to edit_user_registration_path do%><i class="glyphicon glyphicon-edit"></i> Editar Perfil
+                <% end %> </li>
+                <li><%= link_to destroy_user_session_path, method: :delete do%><i class="glyphicon glyphicon-log-out"></i> Cerrar Sesión
+                <% end %></li>
               </ul>
             </li>
 
         <% else %>
-          <li><%= link_to 'Ingresar', new_user_session_path%></li>
+          <li>
+            <%= link_to new_user_session_path do %>
+            <i class="glyphicon glyphicon-log-in"></i> Ingresar
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </div>
