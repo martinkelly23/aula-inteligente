@@ -2,6 +2,10 @@ class AulasController < ApplicationController
   def index
   end
 
+  def index2
+    @aula = Aula.find(params[:id])
+  end
+
   def show
   end
 

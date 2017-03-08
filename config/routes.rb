@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   get '/cargarAula', to:'aulas#cargarAula'
 
+  get '/detallesAula', to:'aulas#index2'
+
   resources :estadisticas
 
   get '/estadisticasAulas', to:'estadisticas#index'

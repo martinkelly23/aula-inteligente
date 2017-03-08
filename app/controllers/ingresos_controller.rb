@@ -33,7 +33,7 @@ class IngresosController < ApplicationController
      @aula.save #Guardo la modificacion hecha en el aula
      @usuario = User.find(@ingreso.user_id) #Busco el usuario que uso el aula
      @usuario.consumo += @ingresoAux.ConsumoParcial
-     @usuario.save 
+     @usuario.save
      if(cumple)
        if @ingresoAux.save
          flash[:notice] = 'El ingreso se completo exitosamente!'
@@ -45,9 +45,6 @@ class IngresosController < ApplicationController
       redirect_to listadoIngresos_path
      end
    end
-
-
-
   end
 
   def destroy

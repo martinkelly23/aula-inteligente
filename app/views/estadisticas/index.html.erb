@@ -1,5 +1,3 @@
-
-
 <h1>Estadísticas de consumo de las aulas</h1>
 <%= column_chart Aula.pluck(:NombreAula, :ConsumoAula), xtitle: "Aula", ytitle: "Consumo"%>
 
