@@ -12,12 +12,14 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-top">
       <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
         <div class="pull-left header-links">
+          <form class="navbar-form navbar-left">
           <%= form_tag(listadoMonstruos_path, class:"navbar-form navbar-right search-form ", :method => "get") do %>
                 <%=text_field_tag :busqueda,nil,class:'search',placeholder: "Buscar aula..." %>
           <%end%>
+        </form>
         </div>
-        <% if user_signed_in? %>
           <li><%= link_to current_user.name , listadoIngresos_path %></li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Opciones

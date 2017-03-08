@@ -22,12 +22,11 @@
       <td> <%= ingre.HoraSalida %> </td>
       <td> <%= ingre.ConsumoParcial %> </td>
       <td>
-        <p>
-          <td><%= link_to "Editar", editarLogro_path(@ingre, :id => ingre.id), class: 'btn btn-info btn-sm' %></d>
-            <td><%= link_to "Eliminar", eliminarIngreso_path(@ingre, :id => ingre.id), class: 'btn btn-danger btn-sm"' %></d>
-
-        </p>
+      <td>
+          <%= link_to "Editar", editarLogro_path(@ingre, :id => ingre.id), class: 'btn btn-info btn-sm' %>
+          <%= link_to "Eliminar", eliminarIngreso_path(@ingre, :id => ingre.id), class: 'btn btn-danger btn-sm"' %>
       </td>
+      <td>
     </tr>
 <% end %>
 </tbody>
