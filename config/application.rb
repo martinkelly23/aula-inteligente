@@ -1,5 +1,5 @@
 require File.expand_path('../boot', __FILE__)
-config.assets.paths << Rails.root.join("vendor","assets", "fonts")
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Laboratorio7
   class Application < Rails::Application
+    config.assets.paths << Rails.root.join("vendor","assets", "fonts")
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
