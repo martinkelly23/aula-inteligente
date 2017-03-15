@@ -40,7 +40,11 @@ class AulasController < ApplicationController
   def create
     @aula = Aula.new(aula_params)
     cumple = true
-
+    @aula.estado = "Libre"
+    @aula.estadoProyector = "Apagado"
+    @aula.estadoAire = "Apagado"
+    @aula.estadoLuces = "Apagadas"
+    @aula.temperatura = 24.5
     Aula.all.each do |aul|
        if(@aula.NombreAula == aul.NombreAula)
           flash[:notice] = 'Ya exite un aula con ese nombre'
