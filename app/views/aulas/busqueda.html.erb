@@ -1,0 +1,31 @@
+<%if @aula == nil%>
+  <h1>No se ha encontrado aula</h1>
+<%else%>
+<h1>Se ha encontrado aula con el nombre: <%= @aula.NombreAula %> </h1>
+  <table class= "table2 table table-hover">
+    <thead>
+      <tr>
+        <th> Nombre </th>
+        <th> Departamento </th>
+        <th> Consumo </th>
+        <th> Estado </th>
+        <th> Temperatura </th>
+        <th> Estado de luces </th>
+        <th> Estado del proyector </th>
+        <th> Estado del aire acondicionado </th>
+      </tr>
+    </thead>
+<tbody>
+    <tr>
+      <td> <%= @aula.NombreAula %> </td>
+      <td> <%= @aula.Departemento %> </td>
+      <td> <%= @aula.ConsumoAula %> </td>
+      <td> <%= @aula.estado%> </td>
+      <td> <%= @aula.temperatura%> </td>
+      <td> <%= @aula.estadoLuces%> </td>
+      <td> <%= @aula.estadoProyector%> </td>
+      <td> <%= @aula.estadoAire%> </td>
+    </tr>
+</tbody>
+</table>
+<%end%>

@@ -6,6 +6,16 @@ class AulasController < ApplicationController
     @aula = Aula.find(params[:id])
   end
 
+  def busqueda
+    if params[:search].present?
+      Aula.all.each do |aul|
+       if(aul.NombreAula == params[:search])
+         @aula = aul
+       end
+      end
+    end
+  end
+
   def show
   end
 

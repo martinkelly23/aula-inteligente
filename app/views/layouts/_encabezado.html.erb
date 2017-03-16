@@ -15,10 +15,11 @@
         <% if user_signed_in? %>
         <div class="pull-left header-links">
           <form class="navbar-form navbar-left">
-          <%= form_tag(listadoMonstruos_path, class:"navbar-form navbar-right search-form ", :method => "get") do %>
-                <%=text_field_tag :busqueda,nil,class:'search',placeholder: "Buscar aula..." %>
+          <%= form_tag(busquedaAula_path, class:"navbar-form navbar-right search-form ", :method => "get") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Buscar Aula..." %>
+            <%= submit_tag "Buscar", formaction: busquedaAula_path %>
           <%end%>
-        </form>
+          </form>
         </div>
           <li><%= link_to current_user.name , listadoIngresos_path %></li>
           <li class="dropdown">

@@ -11,7 +11,9 @@ class IngresosController < ApplicationController
      @ingreso.HoraEntrada = Time.now.strftime("%R")
      @ingreso.HoraSalida = 9999
      @ingreso.ConsumoParcial = 0
-
+     @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
+     @aula.estado = "En uso"
+     @aula.save #Guardo la modificacion hecha en el aula
      if(cumple)
        if @ingreso.save
          flash[:notice] = 'El nuevo ingreso se registro exitosamente!'
@@ -30,6 +32,7 @@ class IngresosController < ApplicationController
      @ingresoAux.ConsumoParcial = @ingreso.ConsumoParcial
      @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
      @aula.ConsumoAula += @ingresoAux.ConsumoParcial #Sumo al aula el consumo del usuario
+     @aula.estado = "Libre"
      @aula.save #Guardo la modificacion hecha en el aula
      @usuario = User.find(@ingreso.user_id) #Busco el usuario que uso el aula
      @usuario.consumo += @ingresoAux.ConsumoParcial

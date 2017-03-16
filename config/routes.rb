@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   get '/detallesAula', to:'aulas#index2'
 
+  get '/busquedaAula', to:'aulas#busqueda'
+
   resources :estadisticas
 
   get '/estadisticasAulas', to:'estadisticas#index'
