@@ -27,10 +27,18 @@ class AulasController < ApplicationController
   def eventoAula
     @au = Aula.new(aula_params)
     @aula = Aula.find(params[:aula_id])
-    @aula.estadoProyector = @au.estadoProyector
-    @aula.estadoAire = @au.estadoAire
-    @aula.estadoLuces = @au.estadoLuces
-    @aula.temperatura = @au.temperatura
+    if @au.estadoProyector != nil
+      @aula.estadoProyector = @au.estadoProyector
+    end
+    if @au.estadoAire != nil
+      @aula.estadoAire = @au.estadoAire
+    end
+    if @au.estadoLuces != nil
+      @aula.estadoLuces = @au.estadoLuces
+    end
+    if @au.temperatura != nil
+      @aula.temperatura = @au.temperatura
+    end
     @aula.save
     redirect_to listadoAulas_path
   end
