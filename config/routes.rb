@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   get '/busquedaAula', to:'aulas#busqueda'
 
+  get '/eventoAula', to:'aulas#eventoAula'
+
   resources :estadisticas
 
   get '/estadisticasAulas', to:'estadisticas#index'

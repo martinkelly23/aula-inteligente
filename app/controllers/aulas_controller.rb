@@ -23,6 +23,18 @@ class AulasController < ApplicationController
     @aula = Aula.new
   end
 
+  #/eventoAula?aula_id=2&aula[estadoAire]=Encendido&aula[estadoProyector]=Apagado
+  def eventoAula
+    @au = Aula.new(aula_params)
+    @aula = Aula.find(params[:aula_id])
+    @aula.estadoProyector = @au.estadoProyector
+    @aula.estadoAire = @au.estadoAire
+    @aula.estadoLuces = @au.estadoLuces
+    @aula.temperatura = @au.temperatura
+    @aula.save
+    redirect_to listadoAulas_path
+  end
+
   # Con esta definicion de controlador y a partir de la ruta creada, puedo crear nuevas aulas por URL
   # mediante el siguiente codigo> /cargarAula?aula[NombreAula]=Aula3&aula[Departemento]=Aeronautica&aula[ConsumoAula]=0
   def cargarAula
@@ -78,7 +90,7 @@ class AulasController < ApplicationController
   end
 
   def aula_params
-      params.require(:aula).permit(:NombreAula, :Departemento, :ConsumoAula)
+      params.require(:aula).permit(:NombreAula, :Departemento, :ConsumoAula, :temperatura, :estadoLuces, :estadoAire, :estadoProyector)
   end
 
   def update
