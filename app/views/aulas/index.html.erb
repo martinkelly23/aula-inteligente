@@ -4,6 +4,7 @@
       <tr>
         <th> Nombre </th>
         <th> Departamento </th>
+        <th> Estado </th>
         <th> Consumo </th>
         <th> Acciones </th>
       </tr>
@@ -13,6 +14,7 @@
     <tr>
       <td> <%= aula.NombreAula %> </td>
       <td> <%= aula.Departemento %> </td>
+      <td> <%= aula.estado %> </td>
       <td> <%= aula.ConsumoAula %> </td>
           <td>
           <%= link_to "Ver más", detallesAula_path(@aula, :id => aula.id), class: 'btn btn-warning btn-sm' %>

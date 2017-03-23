@@ -8,8 +8,7 @@ class IngresosController < ApplicationController
     cumple = true
 
    if(@ingreso.HoraEntrada == 1) # Significa que es una entrada
-     @ingreso.HoraEntrada = Time.now.strftime("%R")
-     @ingreso.HoraSalida = 9999
+     @ingreso.horaEnt = Time.zone.now
      @ingreso.ConsumoParcial = 0
      @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
      @aula.estado = "En uso"
@@ -28,7 +27,7 @@ class IngresosController < ApplicationController
 
    if(@ingreso.HoraSalida == 1) # Significa que es una salida
      @ingresoAux = Ingreso.where(aula_id: @ingreso.aula_id).first
-     @ingresoAux.HoraSalida = Time.now.strftime("%R")
+     @ingresoAux.horaSal = Time.zone.now
      @ingresoAux.ConsumoParcial = @ingreso.ConsumoParcial
      @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
      @aula.ConsumoAula += @ingresoAux.ConsumoParcial #Sumo al aula el consumo del usuario

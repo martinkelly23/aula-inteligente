@@ -18,8 +18,8 @@
     <tr>
       <td> <%= Aula.find(ingre.aula_id).NombreAula %> </td>
       <td> <%= User.find(ingre.user_id).name %> </td>
-      <td> <%= ingre.HoraEntrada %> </td>
-      <td> <%= ingre.HoraSalida %> </td>
+      <td> <%= ingre.horaEnt.strftime('%c') %> </td>
+      <td> <%= ingre.horaSal.strftime('%c') %> </td>
       <td> <%= ingre.ConsumoParcial %> </td>
       <td>
           <%= link_to "Eliminar", eliminarIngreso_path(@ingre, :id => ingre.id), class: 'btn btn-danger btn-sm',:data => { :confirm => 'Esta seguro que desea eliminar?'} %>
