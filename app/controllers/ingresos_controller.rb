@@ -1,6 +1,6 @@
 class IngresosController < ApplicationController
 
-# http://localhost:3000/nuevoIngreso?ingreso[HoraEntrada]=19&ingreso[HoraSalida]=1&ingreso[ConsumoParcial]=50&ingreso[aula_id]=2&ingreso[user_id]=1
+# http://localhost:3000/nuevoIngreso?ingreso[HoraEntrada]=1&ingreso[HoraSalida]=9999&ingreso[ConsumoParcial]=50&ingreso[aula_id]=1&ingreso[user_id]=1
 # PARA QUE SEA ENTRADA PONGO HORAENTRADA EN 1 EN LO QUE MANDA ARDUINO
 # PARA QUE SEA SALIDA PONGO HORASALIDA EN 1 EN LO QUE MANDA ARDUINO
   def nuevoIngreso
