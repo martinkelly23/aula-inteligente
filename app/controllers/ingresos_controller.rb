@@ -8,7 +8,7 @@ class IngresosController < ApplicationController
     cumple = true
 
    if(@ingreso.HoraEntrada == 1) # Significa que es una entrada
-     @ingreso.horaEnt = Time.zone.now
+     
      @ingreso.ConsumoParcial = 0
      @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario ingresa
      @aula.estado = "En uso"
