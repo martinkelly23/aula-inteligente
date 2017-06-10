@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323013352) do
+ActiveRecord::Schema.define(version: 20170610223911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20170323013352) do
     t.integer  "aula_id"
     t.datetime "horaEnt"
     t.datetime "horaSal"
+    t.datetime "horaEntra"
+    t.string   "codigo"
   end
 
   create_table "logros", force: :cascade do |t|
