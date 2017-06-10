@@ -28,6 +28,7 @@ class IngresosController < ApplicationController
    if(@ingreso.HoraSalida == 1) # Significa que es una salida
      @ingresoAux = Ingreso.where(aula_id: @ingreso.aula_id).first
      @ingresoAux.horaSal = Time.zone.now
+     @ingresoAux.HoraSalida = 1
      @ingresoAux.ConsumoParcial = @ingreso.ConsumoParcial
      @aula = Aula.find(@ingreso.aula_id) #Busco el aula de la cual el usuario sale
      @aula.ConsumoAula += @ingresoAux.ConsumoParcial #Sumo al aula el consumo del usuario
