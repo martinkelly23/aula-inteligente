@@ -60,7 +60,7 @@ class IngresosController < ApplicationController
   end
 
   def ingreso_params
-      params.require(:ingreso).permit(:HoraEntrada, :HoraSalida, :ConsumoParcial, :user_id, :aula_id)
+      params.require(:ingreso).permit(:HoraEntrada, :HoraSalida, :ConsumoParcial, :user_id, :aula_id, :horaEnt)
   end
 
 end
