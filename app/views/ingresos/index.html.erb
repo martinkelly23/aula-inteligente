@@ -18,7 +18,7 @@
     <tr>
       <td> <%= Aula.find(ingre.aula_id).NombreAula %> </td>
       <td> <%= User.find(ingre.user_id).name %> </td>
-      <td> - </td>
+      <td> <%= ingre.horaEnt.strftime('%c') %> </td>
       <% if ingre.HoraSalida == 1 %>
         <td> <%= ingre.horaSal.strftime('%c') %> </td>
       <% else %>
