@@ -44,7 +44,7 @@ class IngresosController < ApplicationController
 
      @usuario = User.find(@ingresoAux.user_id) #Busco el usuario que uso el aula
 
-     @usuario.consumo += @ingresoAux.ConsumoParcial
+     @usuario.consumo += @ingresoAux.ConsumoParcial  #VER ESTO QUE EN LA BD EL USUARIO NO TIENE NADA!
      @usuario.save
      if(cumple)
        if @ingresoAux.save
